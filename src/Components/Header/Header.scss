@@ -1,0 +1,33 @@
+@keyframes animateArrow {
+  100% {
+    transform: translateY(0.4rem);
+  }
+}
+
+#header {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    font-size: 4.5rem;
+    margin-top: 30vh;
+  }
+
+  #arrowBox {
+    transform: scale(4);
+    margin-top: 10vh;
+    &:hover {
+      background: #f6c101;
+      #arrow {
+        animation-name: animateArrow;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-duration: 1s;
+        animation-direction: alternate;
+      }
+    }
+  }
+}

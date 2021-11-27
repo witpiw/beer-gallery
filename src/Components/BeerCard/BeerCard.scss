@@ -1,0 +1,45 @@
+#beerCard {
+  margin: 10px;
+  height: 400px;
+  width: 250px;
+  border: 4px solid black;
+  border-radius: 10%;
+  overflow: hidden;
+  transition: all 1s;
+
+  .beerName {
+    height: 10%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+  }
+
+  .imgContainer {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    img {
+      background-size: cover;
+      height: 100%;
+    }
+  }
+  .modalBtn {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #f6c101;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 15%;
+
+    &:hover {
+      border-top: 4px solid black;
+    }
+  }
+}
