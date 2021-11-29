@@ -6,6 +6,8 @@ import BeerCard from "../BeerCard/BeerCard";
 import fetchBeers from "../../Api/punkApi";
 //styles
 import "./Main.scss";
+//images
+import defaultImage from "../../images/beer-bottle.png";
 
 const Main = () => {
   const [beers, setBeers] = useState([]);
@@ -28,7 +30,7 @@ const Main = () => {
             name={name}
             key={id}
             id={id}
-            img={image_url}
+            img={image_url || defaultImage}
           />
         ))}
       </main>

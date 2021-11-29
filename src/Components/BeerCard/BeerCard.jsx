@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import Modal from "../Modal/Modal";
 
 import "./BeerCard.scss";
