@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 //components
 import Pager from "../Pager/Pager";
 import BeerCard from "../BeerCard/BeerCard";
+import Loader from "../Loader/Loader";
 //api
 import fetchBeers from "../../Api/punkApi";
 //styles
@@ -24,6 +25,7 @@ const Main = () => {
   return (
     <>
       <main>
+        {beers.length === 0 && <Loader />}
         {beers.map(({ id, image_url, name, description }) => (
           <BeerCard
             description={description}
@@ -34,7 +36,10 @@ const Main = () => {
           />
         ))}
       </main>
-      <Pager changePage={(val) => setPage(val)} />
+      <Pager
+        resetBeers={() => setBeers([])}
+        changePage={(val) => setPage(val)}
+      />
     </>
   );
 };

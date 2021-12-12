@@ -21,9 +21,11 @@ const Pager = (props) => {
     if (type === "decrement" && currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
+    props.resetBeers();
   };
 
   const handleChange = (el) => {
+    props.resetBeers();
     const val = Number(el.target.value);
     let page;
     if (val >= 1 && val < 23) {
