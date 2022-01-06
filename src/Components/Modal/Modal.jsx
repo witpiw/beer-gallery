@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { connect } from "react-redux";
+
+import { hideModal } from "../../redux/actions";
 import { ReactComponent as CloseIcon } from "../../images/close.svg";
 import "./Modal.scss";
 
 const Modal = (props) => {
   return ReactDOM.createPortal(
-    <div id="modal" onClick={() => props.hide()}>
+    <div id="modal" onClick={() => props.hideModal()}>
       <div id="beerDetails" onClick={(e) => e.stopPropagation()}>
         <div id="imgContainer">
           <img id="img" src={props.img} alt={props.name} />
@@ -13,7 +16,7 @@ const Modal = (props) => {
         <div id="content">
           <div id="modalHeader">
             <h1>{props.name}</h1>
-            <button id="close" onClick={() => props.hide()}>
+            <button id="close" onClick={() => props.hideModal()}>
               <CloseIcon />
             </button>
           </div>
@@ -25,4 +28,4 @@ const Modal = (props) => {
   );
 };
 
-export default Modal;
+export default connect(null, { hideModal })(Modal);

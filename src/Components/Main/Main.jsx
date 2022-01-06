@@ -1,35 +1,24 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { connect } from "react-redux";
 //components
 import Pager from "../Pager/Pager";
 import BeerCard from "../BeerCard/BeerCard";
 import Loader from "../Loader/Loader";
-//api
-import fetchBeers from "../../Api/punkApi";
+import Modal from "../Modal/Modal";
+//actions
+import { fetchBeers } from "../../redux/actions";
 //styles
 import "./Main.scss";
 //images
 import defaultImage from "../../images/beer-bottle.png";
 
-const Main = () => {
-  const [beers, setBeers] = useState([]);
-  const [error, setError] = useState(false);
-  const [page, setPage] = useState(1);
-
+const Main = ({ page, fetchBeers, ...props }) => {
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await fetchBeers(page);
-        setBeers(res);
-        setError(false);
-      } catch {
-        setError(true);
-      }
-    };
-    fetchData();
-  }, [page]);
+    fetchBeers(page);
+  }, [page, fetchBeers]);
 
   const renderBeerCards = () => {
-    return beers.map(({ id, image_url, name, description }) => (
+    return props.beers.data.map(({ id, image_url, name, description }) => (
       <BeerCard
         description={description}
         name={name}
@@ -41,10 +30,11 @@ const Main = () => {
   };
 
   const renderContent = () => {
-    if (!error && beers.length !== 0) {
-      return renderBeerCards();
-    } else if (beers.length === 0 && !error) {
+    if (props.beers.error === false && props.beers.data.length === 0) {
       return <Loader />;
+    }
+    if (props.beers.error === false && props.beers.data.length !== 0) {
+      return renderBeerCards();
     } else {
       return (
         <p>
@@ -57,13 +47,17 @@ const Main = () => {
 
   return (
     <>
+      {props.modal && <Modal {...props.modal} />}
       <main>{renderContent()}</main>
-      <Pager
-        resetBeers={() => setBeers([])}
-        changePage={(val) => setPage(val)}
-      />
+      <Pager />
     </>
   );
 };
 
-export default Main;
+const mapStateToProps = (state) => {
+  return { beers: state.beers, page: state.page, modal: state.modal };
+};
+
+export default connect(mapStateToProps, {
+  fetchBeers,
+})(Main);

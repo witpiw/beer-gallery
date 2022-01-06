@@ -1,29 +1,18 @@
-import { useState } from "react";
-import Modal from "../Modal/Modal";
+import { connect } from "react-redux";
+
+import { showModal } from "../../redux/actions";
 
 import "./BeerCard.scss";
 
 const BeerCard = (props) => {
-  const [showModal, setShowModal] = useState(false);
-  const hideModal = () => {
-    setShowModal(false);
-  };
   return (
     <>
-      {showModal && (
-        <Modal
-          description={props.description}
-          img={props.img}
-          hide={hideModal}
-          name={props.name}
-        />
-      )}
       <div id="beerCard">
         <div className="imgContainer">
           <img src={props.img} alt="beer" />
         </div>
         <div className="beerName">{props.name}</div>
-        <button className="modalBtn" onClick={() => setShowModal(true)}>
+        <button className="modalBtn" onClick={() => props.showModal(props)}>
           Find out more
         </button>
       </div>
@@ -31,4 +20,6 @@ const BeerCard = (props) => {
   );
 };
 
-export default BeerCard;
+export default connect(null, {
+  showModal,
+})(BeerCard);
