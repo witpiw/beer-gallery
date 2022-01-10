@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/beer-gallery/static/css/main.8e1f6b75.chunk.css",
-    "main.js": "/beer-gallery/static/js/main.5140b606.chunk.js",
-    "main.js.map": "/beer-gallery/static/js/main.5140b606.chunk.js.map",
+    "main.js": "/beer-gallery/static/js/main.818176b2.chunk.js",
+    "main.js.map": "/beer-gallery/static/js/main.818176b2.chunk.js.map",
     "runtime-main.js": "/beer-gallery/static/js/runtime-main.1a5ab65d.js",
     "runtime-main.js.map": "/beer-gallery/static/js/runtime-main.1a5ab65d.js.map",
-    "static/js/2.ff1d16da.chunk.js": "/beer-gallery/static/js/2.ff1d16da.chunk.js",
-    "static/js/2.ff1d16da.chunk.js.map": "/beer-gallery/static/js/2.ff1d16da.chunk.js.map",
+    "static/js/2.9f0432e4.chunk.js": "/beer-gallery/static/js/2.9f0432e4.chunk.js",
+    "static/js/2.9f0432e4.chunk.js.map": "/beer-gallery/static/js/2.9f0432e4.chunk.js.map",
     "index.html": "/beer-gallery/index.html",
     "static/css/main.8e1f6b75.chunk.css.map": "/beer-gallery/static/css/main.8e1f6b75.chunk.css.map",
-    "static/js/2.ff1d16da.chunk.js.LICENSE.txt": "/beer-gallery/static/js/2.ff1d16da.chunk.js.LICENSE.txt",
+    "static/js/2.9f0432e4.chunk.js.LICENSE.txt": "/beer-gallery/static/js/2.9f0432e4.chunk.js.LICENSE.txt",
     "static/media/arrow_downward.4108d6e5.svg": "/beer-gallery/static/media/arrow_downward.4108d6e5.svg",
     "static/media/beer-bottle.1f94114a.png": "/beer-gallery/static/media/beer-bottle.1f94114a.png",
     "static/media/close.244b6687.svg": "/beer-gallery/static/media/close.244b6687.svg",
@@ -18,8 +18,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.1a5ab65d.js",
-    "static/js/2.ff1d16da.chunk.js",
+    "static/js/2.9f0432e4.chunk.js",
     "static/css/main.8e1f6b75.chunk.css",
-    "static/js/main.5140b606.chunk.js"
+    "static/js/main.818176b2.chunk.js"
   ]
 }
